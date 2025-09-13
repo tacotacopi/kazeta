@@ -31,6 +31,7 @@ struct SoundEffects {
     select: audio::Sound,
     reject: audio::Sound,
     back: audio::Sound,
+    menu_music: audio::Sound,
 }
 
 impl SoundEffects {
@@ -40,7 +41,19 @@ impl SoundEffects {
             select: audio::load_sound_from_bytes(include_bytes!("../select.wav")).await.unwrap(),
             reject: audio::load_sound_from_bytes(include_bytes!("../reject.wav")).await.unwrap(),
             back: audio::load_sound_from_bytes(include_bytes!("../back.wav")).await.unwrap(),
+            menu_music: audio::load_sound_from_bytes(include_bytes!("../menu_music.wav")).await.unwrap(),
         }
+    }
+
+    fn play_menu_music(&self) {
+        audio::play_sound(&self.menu_music, audio::PlaySoundParams {
+            looped: true,  // loops
+            volume: 0.3,   // volume
+        });
+    }
+
+    fn stop_menu_music(&self) {
+        audio::stop_sound(&self.menu_music);
     }
 
     fn play_cursor_move(&self) {
