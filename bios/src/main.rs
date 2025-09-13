@@ -41,7 +41,7 @@ impl SoundEffects {
             select: audio::load_sound_from_bytes(include_bytes!("../select.wav")).await.unwrap(),
             reject: audio::load_sound_from_bytes(include_bytes!("../reject.wav")).await.unwrap(),
             back: audio::load_sound_from_bytes(include_bytes!("../back.wav")).await.unwrap(),
-            menu_music: audio::load_sound_from_bytes(include_bytes!("../menu_music.wav")).await.unwrap(),
+            menu_music: audio::load_sound_from_bytes(include_bytes!("../main_menu.wav")).await.unwrap(),
         }
     }
 
