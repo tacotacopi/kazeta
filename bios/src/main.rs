@@ -1234,6 +1234,7 @@ async fn main() {
 
     // Initialize sound effects
     let sound_effects = SoundEffects::new().await;
+    sound_effects.play_menu_music();
 
     // Initialize gamepad support
     let mut gilrs = Gilrs::new().unwrap();
