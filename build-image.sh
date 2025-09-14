@@ -200,6 +200,9 @@ if [ -n "$(ls -A '/extra_certs')" ]; then
 	trust anchor --store /extra_certs/*.crt
 fi
 
+# ima test this
+mkdir -p /var/kazeta
+
 # run post install hook
 postinstallhook
 
