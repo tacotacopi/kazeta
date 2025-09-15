@@ -201,7 +201,7 @@ if [ -n "$(ls -A '/extra_certs')" ]; then
 fi
 
 # ima test this
-mkdir -p /var
+mkdir -p /var/kazeta
 
 # run post install hook
 postinstallhook
